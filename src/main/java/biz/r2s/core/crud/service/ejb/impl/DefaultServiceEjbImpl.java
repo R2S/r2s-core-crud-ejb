@@ -19,7 +19,6 @@ public class DefaultServiceEjbImpl<T extends BaseModel<V>, V extends Serializabl
 		this.resource = resource;
 	}
 	
-	@Override
 	public GenericDao<T, V> getDao() {
 		defaultDao.setEntityClass(resource);
 		return defaultDao;

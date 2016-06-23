@@ -41,30 +41,25 @@ public abstract class GenericDaoEbjImpl<T extends BaseModel<V>, V extends Serial
 	}
 	
 	
-	@Override
 	public void insert(T t) {
 		this.getEntityManager().persist(t);		
 	}
 
-	@Override
 	public void update(T t) {
 		this.getEntityManager().merge(t);
 		
 	}
 
-	@Override
 	public void delete(T t) {
 		this.entityManager.remove(getEntityManager().contains(t) ? t : getEntityManager().merge(t));		
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<T> listAll() {
 		return (List<T>) this.getEntityManager().createQuery("select o from "+this.entityClass.getName()+" o")
 				.getResultList();
 	}
 
-	@Override
 	public T get(V id) {
 		return this.getEntityManager().find(this.entityClass, id);
 	}

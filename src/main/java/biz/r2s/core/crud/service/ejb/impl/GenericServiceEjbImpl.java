@@ -11,7 +11,6 @@ public abstract class GenericServiceEjbImpl<T extends BaseModel<V>, V extends Se
 
 	public abstract GenericDao<T, V> getDao();
 	
-	@Override
 	public T save(T t) {
 		this.getDao().insert(t);
 		if (t.getId() != null) {
@@ -20,7 +19,6 @@ public abstract class GenericServiceEjbImpl<T extends BaseModel<V>, V extends Se
 		return null;
 	}
 
-	@Override
 	public T edit(T t) {
 		if (getDao().get(t.getId()) != null) {
 			getDao().update(t);
@@ -29,19 +27,16 @@ public abstract class GenericServiceEjbImpl<T extends BaseModel<V>, V extends Se
 		return null;
 	}
 
-	@Override
 	public void delete(T t) {
 		if (this.getDao().get(t.getId()) != null) {
 			this.getDao().delete(t);
 		}		
 	}
 
-	@Override
 	public List<T> list() {
 		return this.getDao().listAll();
 	}
 
-	@Override
 	public T show(V id) {
 		return this.getDao().get(id);
 	}

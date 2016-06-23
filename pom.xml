@@ -34,4 +34,16 @@
 			</plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+		<repository>
+			<id>bitnami-artifactory-5cf1</id>
+			<name>bitnami-artifactory-5cf1-releases</name>
+			<url>http://repository.r2s.biz/artifactory/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>bitnami-artifactory-5cf1</id>
+			<name>bitnami-artifactory-5cf1-snapshots</name>
+			<url>http://repository.r2s.biz/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
